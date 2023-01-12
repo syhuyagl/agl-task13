@@ -3,4 +3,5 @@
 Template Name: Cat
 */
 
+cat
 ?>

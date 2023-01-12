@@ -17,25 +17,23 @@
 			<div class="c-header__top">
 				<div class="logo">
 					<?php
-					$logos = get_field('logo');
-					if ($logos): ?>
-						<?php foreach ($logos as $logo): ?>
-							<a href="<?php echo esc_url($logo['link']['url']); ?>">
-								<img src="<?php echo esc_url($logo['img']['url']); ?>"
-									alt="<?php echo esc_attr($logo['img']['alt']); ?>" />
-							</a>
-						<?php endforeach; ?>
+					$logo = get_field('logo','option');
+					if ($logo): ?>
+						<a href="<?php echo esc_url($logo['link']['url']); ?>">
+							<img src="<?php echo esc_url($logo['logo']['url']); ?>"
+								alt="<?php echo esc_attr($logo['logo']['alt']); ?>" />
+						</a>
 					<?php endif; ?>
 				</div>
 				<div class="contact">
 					<?php
-					$head_left = get_field('head_left');
-					if ($head_left): ?>
-						<img src="<?php echo esc_url($head_left['tel']['url']); ?>"
-							alt="<?php echo esc_attr($head_left['tel']['alt']); ?>" />
+					$head_right = get_field('right','option');
+					if ($head_right): ?>
+						<img src="<?php echo esc_url($head_right['img1']['url']); ?>"
+							alt="<?php echo esc_attr($head_right['img1']['alt']); ?>" />
 						<br>
-						<img src="<?php echo esc_url($head_left['con']['url']); ?>"
-							alt="<?php echo esc_attr($head_left['con']['alt']); ?>" class="js-imglink" />
+						<img src="<?php echo esc_url($head_right['img2']['url']); ?>"
+							alt="<?php echo esc_attr($head_right['img2']['alt']); ?>" class="js-imglink" />
 					<?php endif; ?>
 				</div>
 			</div>
