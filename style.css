@@ -257,7 +257,7 @@ body {
   right: 2px;
   top: 1px;
   text-indent: 40px;
-  background: url(../img/icon_search.png) no-repeat center #90c132;
+  background: url('img/icon_search.png') no-repeat center #90c132;
   border: 0;
   -webkit-box-shadow: 0;
           box-shadow: 0;

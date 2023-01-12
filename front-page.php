@@ -44,7 +44,7 @@
 						<span class="c-labellist">
 							<?php
 							$cats = get_the_category($topic); foreach ($cats as $cat) {
-								if ($cat->cat_name != '未分類') {
+								if ($cat->cat_name != 'サービス' || $cat->cat_name != 'Uncategorized') {
 									?>
 									<a href="<?php echo get_category_link($cat->term_id); ?>" class="c-label">
 										<?php echo $cat->cat_name; ?>
@@ -81,42 +81,26 @@
 		<?php
 		$access = get_field('access');
 		if ($access): ?>
-			<div class="c-access">
+			<?php foreach ($access as $item): ?>
+				<div class="c-access">
 				<div class="c-access__info">
-					<h3 class="c-title c-title--sub">本店</h3>
-					<p class="address">〒210-0005　川崎市川崎区東田町8 パレール三井ビル8階</p>
-					<p class="time">JR川崎駅東口より徒歩7分　京急川崎駅より徒歩5分</p>
+					<h3 class="c-title c-title--sub"><?php echo $item['title_map']; ?></h3>
+					<p class="address"><?php echo $item['address']; ?></p>
+					<p class="time"><?php echo $item['time']; ?></p>
 					<br />
 					<p>
-						<span class="tel">tel : 044-233-2811</span>
-						<span class="fax">fax : 044-233-0818</span>
+						<span class="tel">tel : <?php echo $item['tel']; ?></span>
+						<span class="fax">fax : <?php echo $item['fax']; ?></span>
 						<br />
-						<span class="email">mail : info@wms.or.jp</span>
+						<span class="email"><?php echo $item['email']; ?></span>
 					</p>
 				</div>
 				<div class="c-access__img">
-					<img src="<?php echo esc_url($access['map1']['url']); ?>"
-						alt="<?php echo esc_attr($access['map1']['alt']); ?>" />
+					<img src="<?php echo esc_url($item['image_map']['url']); ?>"
+						alt="<?php echo esc_url($item['image_map']['alt']); ?>" />
 				</div>
 			</div>
-			<div class="c-access">
-				<div class="c-access__info">
-					<h3 class="c-title c-title--sub">相模原支店</h3>
-					<p class="address">〒252-0231　相模原市中央区相模原3-8-25 第3JSビル7階</p>
-					<p class="time">JR横浜線相模原駅より徒歩2分</p>
-					<br />
-					<p>
-						<span class="tel">tel : 042-704-9581</span>
-						<span class="fax">fax : 042-704-9582</span>
-						<br />
-						<span class="email"></span>
-					</p>
-				</div>
-				<div class="c-access__img">
-					<img src="<?php echo esc_url($access['map2']['url']); ?>"
-						alt="<?php echo esc_attr($access['map2']['alt']); ?>" />
-				</div>
-			</div>
+			<?php endforeach; ?>
 		<?php endif; ?>
 
 
