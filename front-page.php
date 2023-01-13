@@ -15,21 +15,15 @@
 		</div>
 	</div>
 </div>
-</div>
-
 <main>
 	<div class="l-container">
 		<div class="c-grouplink">
-			<?php
-			$grouplinks = get_field('grouplink');
-			if ($grouplinks): ?>
-				<?php foreach ($grouplinks as $grouplink): ?>
-					<a href="<?php echo esc_url($grouplink['link']['url']); ?>">
-						<img src="<?php echo esc_url($grouplink['img']['url']); ?>"
-							alt="<?php echo esc_attr($grouplink['img']['alt']); ?>" class="js-imglink" />
-					</a>
-				<?php endforeach; ?>
-			<?php endif; ?>
+			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/img_01_no.png" alt=""
+					class="js-imglink"></a>
+			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/img_02_no.png" alt=""
+					class="js-imglink"></a>
+			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/img_03_no.png" alt=""
+					class="js-imglink"></a>
 		</div>
 
 		<div class="p-topics">
@@ -60,21 +54,15 @@
 			</ul>
 
 			<div class="l-btn">
-				<a href="topics.html" class="c-btn c-btn--small">一覧を見る</a>
+				<a href="<?php echo get_site_url();?>/topics" class="c-btn c-btn--small">一覧を見る</a>
 			</div>
 		</div>
 
 		<div class="c-grouplink">
-			<?php
-			$grouplinks = get_field('grouplink2');
-			if ($grouplinks): ?>
-				<?php foreach ($grouplinks as $grouplink): ?>
-					<a href="<?php echo esc_url($grouplink['link']['url']); ?>">
-						<img src="<?php echo esc_url($grouplink['img']['url']); ?>"
-							alt="<?php echo esc_attr($grouplink['img']['alt']); ?>" class="js-imglink" />
-					</a>
-				<?php endforeach; ?>
-			<?php endif; ?>
+			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/btn_03_no.png" alt="所員紹介"
+					class="js-imglink"></a>
+			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/btn_04_no.png" alt="事務所案内"
+					class="js-imglink"></a>
 		</div>
 
 		<!-- <div class="c-access"> -->
@@ -83,23 +71,29 @@
 		if ($access): ?>
 			<?php foreach ($access as $item): ?>
 				<div class="c-access">
-				<div class="c-access__info">
-					<h3 class="c-title c-title--sub"><?php echo $item['title_map']; ?></h3>
-					<p class="address"><?php echo $item['address']; ?></p>
-					<p class="time"><?php echo $item['time']; ?></p>
-					<br />
-					<p>
-						<span class="tel">tel : <?php echo $item['tel']; ?></span>
-						<span class="fax">fax : <?php echo $item['fax']; ?></span>
+					<div class="c-access__info">
+						<h3 class="c-title c-title--sub">
+							<?php echo $item['title_map']; ?>
+						</h3>
+						<p class="address"><?php echo $item['address']; ?></p>
+						<p class="time">
+							<?php echo $item['time']; ?>
+						</p>
 						<br />
-						<span class="email"><?php echo $item['email']; ?></span>
-					</p>
+						<p>
+							<span class="tel">tel : <?php echo $item['tel']; ?></span>
+							<span class="fax">fax : <?php echo $item['fax']; ?></span>
+							<br />
+							<span class="email">
+								<?php echo $item['email']; ?>
+							</span>
+						</p>
+					</div>
+					<div class="c-access__img">
+						<img src="<?php echo esc_url($item['image_map']['url']); ?>"
+							alt="<?php echo esc_url($item['image_map']['alt']); ?>" />
+					</div>
 				</div>
-				<div class="c-access__img">
-					<img src="<?php echo esc_url($item['image_map']['url']); ?>"
-						alt="<?php echo esc_url($item['image_map']['alt']); ?>" />
-				</div>
-			</div>
 			<?php endforeach; ?>
 		<?php endif; ?>
 
