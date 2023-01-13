@@ -3,6 +3,7 @@
 Template Name: Intro
 */
 
+get_header();
 ?>
 <main class="p-service">
     <div class="l-container">

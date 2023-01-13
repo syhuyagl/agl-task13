@@ -5,7 +5,7 @@
     </div>
     <div class="l-container">
         <ul class="c-listpost">
-            <?php if (have_posts()):
+            <?php if (have_posts() && $_GET['s'] != ''):
                 while (have_posts()):
                     the_post(); ?>
                     <li>

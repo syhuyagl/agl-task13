@@ -2,7 +2,7 @@
 /*
 Template Name: Profile
 */
-
+get_header();
 ?>
 <main class="p-service">
     <div class="l-container">
