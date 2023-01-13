@@ -30,7 +30,7 @@ body {
 .bx-wrapper {
   border: 0 !important;
   -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .clearfix:after {
@@ -44,13 +44,17 @@ body {
 * Common
 *
 **********************************************************************************/
-.flex, .c-access, .c-grouplink, .c-gnav ul, .p-single__info {
+.flex,
+.c-access,
+.c-grouplink,
+.c-gnav ul,
+.p-single__info {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .c-title {
@@ -91,9 +95,11 @@ body {
   font-size: 1.2rem;
   border-radius: 3px;
 }
-.c-labellist{
+
+.c-labellist {
   margin-right: 20px;
 }
+
 .c-label--white {
   background-color: #fff;
   color: #3c3c3c;
@@ -156,13 +162,14 @@ body {
   padding: 20px 0;
 }
 
-.c-listpost li + li {
+.c-listpost li+li {
   border-top: 1px dotted #cecece;
 }
 
 
 
-.c-listpost span, .c-listpost a {
+.c-listpost span,
+.c-listpost a {
   display: inline-block;
 }
 
@@ -245,7 +252,7 @@ body {
   height: 36px;
   border-radius: 3px;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   border: 1px solid #ccc;
   padding: 0 35px 0 5px;
 }
@@ -260,13 +267,13 @@ body {
   background: url('img/icon_search.png') no-repeat center #90c132;
   border: 0;
   -webkit-box-shadow: 0;
-          box-shadow: 0;
+  box-shadow: 0;
 }
 
 .c-grouplink {
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin: 30px auto 70px;
 }
 
@@ -294,9 +301,14 @@ body {
   font-family: "fontAwesome";
 }
 
-.c-pnav a:hover, .c-pnav a.current {
+.c-pnav a:hover,
+.c-pnav span.current {
   background-color: #90c132;
   border: 1px solid #90c132;
+  display: inline-block;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
   color: #fff;
 }
 
@@ -333,7 +345,8 @@ body {
   padding: 0 5px;
 }
 
-.c-gnav li:hover a, .c-gnav li.active a {
+.c-gnav li:hover a,
+.c-gnav li.active a {
   background-color: #90c132;
   color: #fff;
 }
@@ -442,7 +455,7 @@ body {
   color: #90c132;
 }
 
-.groupbtn li + li a {
+.groupbtn li+li a {
   border-left: 1px solid #fff;
 }
 
@@ -487,14 +500,14 @@ body {
 
 .p-single__info {
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border-bottom: 1px dotted #90c132;
   padding: 10px 0 5px;
   margin-bottom: 30px;
 }
 
-.p-single__info a + a:before {
+.p-single__info a+a:before {
   content: ",";
   padding: 0 5px;
 }

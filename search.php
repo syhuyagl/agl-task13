@@ -4,68 +4,30 @@
         <h1>SEARCH RESULTS</h1>
     </div>
     <div class="l-container">
-        <?php echo $wp_query->found_posts; ?>
-
         <ul class="c-listpost">
-            <li>
-                <span class="datepost">2018/08/27</span>
-                <a href="cat.html" class="c-label">特集記事</a>
-                <a href="post.html">新しい権利　配偶者終身居住権</a>
-            </li>
-            <li>
-                <span class="datepost">2018/08/22</span>
-                <a href="cat.html" class="c-label">デイリーニュース</a>
-                <a href="post.html">介護保険の被保険者</a>
-            </li>
-            <li>
-                <span class="datepost">2018/07/07</span>
-                <a href="cat.html" class="c-label">デイリーニュース</a>
-                <a href="post.html">自然災害と中小企業支援策</a>
-            </li>
-            <li>
-                <span class="datepost">2018/06/20</span>
-                <a href="cat.html" class="c-label">特集記事</a>
-                <a href="post.html">国税庁レポートから読み解く2018年度の重点事項</a>
-            </li>
-            <li>
-                <span class="datepost">2018/05/20</span>
-                <a href="cat.html" class="c-label">事務所ニュース</a>
-                <a href="post.html">働き方改革”と管理者</a>
-            </li>
-            <li>
-                <span class="datepost">2018/04/30</span>
-                <a href="cat.html" class="c-label">事務所ニュース</a>
-                <a href="post.html">働き方改革”と管理者</a>
-            </li>
-            <li>
-                <span class="datepost">2018/04/20</span>
-                <a href="cat.html" class="c-label">事務所ニュース</a>
-                <a href="post.html">働き方改革”と管理者</a>
-            </li>
-            <li>
-                <span class="datepost">2018/03/23</span>
-                <a href="cat.html" class="c-label">事務所ニュース</a>
-                <a href="post.html">働き方改革”と管理者</a>
-            </li>
-            <li>
-                <span class="datepost">2018/02/20</span>
-                <a href="cat.html" class="c-label">事務所ニュース</a>
-                <a href="post.html">働き方改革”と管理者</a>
-            </li>
-            <li>
-                <span class="datepost">2018/01/20</span>
-                <a href="cat.html" class="c-label">事務所ニュース</a>
-                <a href="post.html">働き方改革”と管理者</a>
-            </li>
+            <?php if (have_posts()):
+                while (have_posts()):
+                    the_post(); ?>
+                    <li>
+                        <span class="datepost"><?php echo get_the_date('Y/m/d'); ?></span>
+                        <?php $cat = get_the_category();
+                            foreach ($cat as $cd) {
+                        ?>
+                             <a href="<?php echo get_category_link($cd->term_id); ?>" class="c-label"> <?php echo $cd->cat_name; ?></a>
+                            <?php } ?>
+                        <a href="<?php echo get_permalink($post->ID) ?>"><?php echo get_the_title() ?></a>
+                    </li>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <a href="">Nothing found</a>
+            <?php endif; ?>
         </ul>
-
         <div class="c-pnav">
-            <a href="" class="prev"></a>
-            <a href="" class="current">1</a>
-            <a href="">2</a>
-            <a href="">3</a>
-            <a href="">4</a>
-            <a href="" class="next"></a>
+        <?php the_posts_pagination( array(
+            'mid_size'  => 4,
+            'prev_text' => __( '', 'textdomain' ),
+            'next_text' => __( '', 'textdomain' ),
+            )); ?>
         </div>
     </div>
 </main>
