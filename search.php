@@ -19,15 +19,19 @@
                     </li>
                 <?php endwhile; ?>
             <?php else: ?>
-                <a href="">Nothing found</a>
+            <?php $search_keyword = wp_specialchars( $s, 1); ?>
+                <p>キーワード のトピックが見つかりませんでした: <?php echo  $search_keyword ?></p>
             <?php endif; ?>
         </ul>
         <div class="c-pnav">
-        <?php the_posts_pagination( array(
-            'mid_size'  => 4,
-            'prev_text' => __( '', 'textdomain' ),
-            'next_text' => __( '', 'textdomain' ),
-            )); ?>
+        <?php if ($_GET['s'] != '') {
+            the_posts_pagination( array(
+                'mid_size'  => 4,
+                'prev_text' => __( '', 'textdomain' ),
+                'next_text' => __( '', 'textdomain' ),
+                ));
+            }
+         ?>
         </div>
     </div>
 </main>

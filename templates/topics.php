@@ -11,7 +11,7 @@ Template Name: Topics
     <div class="l-container">
         <ul class="c-listpost">
             <?php
-            $topics = get_posts(array('orderby' => 'ID', 'order' => 'ASC'));
+            $topics = get_posts(array('orderby' => 'date', 'order' => 'DESC', 'numberposts' => 10, ));
             foreach ($topics as $topic):
                 setup_postdata($topic);
                 ?>

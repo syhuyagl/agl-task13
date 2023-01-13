@@ -30,7 +30,7 @@
 			<h2 class="c-title">Topics</h2>
 			<ul class="c-listpost">
 				<?php
-				$topics = get_posts(array('orderby' => 'ID', 'order' => 'ASC')); foreach ($topics as $topic):
+				$topics = get_posts(array('orderby' => 'date', 'order' => 'DESC')); foreach ($topics as $topic):
 					setup_postdata($topic);
 					?>
 					<li>

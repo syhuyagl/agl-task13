@@ -372,7 +372,7 @@ body {
 
 .c-footer {
   border-top: 2px solid #90c132;
-  margin-top: 100px;
+  margin-top: 14.32%
 }
 
 .c-footer__logo {
@@ -540,6 +540,32 @@ body {
   font-size: 2rem;
   padding: 15px 0 30px;
 }
-#searchsubmit{
+
+#searchsubmit {
   cursor: pointer;
+}
+
+.c-404 {
+  max-width: 444px;
+  margin: 64px auto 0;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.c-404__404 {
+  font-size: 13rem;
+  letter-spacing: 25px;
+  color: #90C132;
+}
+
+.c-404__title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.c-404__des {
+  font-size: 1.4;
+  font-weight: 500;
+  text-align: left;
+  padding-top: 30px;
 }
