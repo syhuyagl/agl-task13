@@ -25,8 +25,13 @@ body {
   padding: 0 0;
   font-size: 1.4rem;
   color: #3c3c3c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-
+main {
+  margin-bottom: 100px;
+}
 .bx-wrapper {
   border: 0 !important;
   -webkit-box-shadow: none !important;
@@ -281,7 +286,6 @@ body {
   margin-top: 70px;
   text-align: center;
 }
-
 .c-pnav a {
   display: inline-block;
   line-height: 30px;
@@ -372,7 +376,7 @@ body {
 
 .c-footer {
   border-top: 2px solid #90c132;
-  margin-top: 14.32%
+  margin-top: auto
 }
 
 .c-footer__logo {
@@ -568,4 +572,41 @@ body {
   font-weight: 500;
   text-align: left;
   padding-top: 30px;
+}
+.c-topicnav {
+  margin-top: 70px;
+  text-align: center;
+}
+.c-topicnav > *{
+  margin-left: 5px;
+  
+}
+.c-topicnav a {
+  display: inline-block;
+  line-height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border: 1px solid #90c132;
+  text-align: center;
+}
+
+.c-topicnav a.prev:before {
+  content: "\f100";
+  font-family: "fontAwesome";
+}
+
+.c-topicnav a.next:before {
+  content: "\f101";
+  font-family: "fontAwesome";
+}
+
+.c-topicnav a:hover,
+.c-topicnav span.current {
+  background-color: #90c132;
+  border: 1px solid #90c132;
+  display: inline-block;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  color: #fff;
 }
