@@ -624,6 +624,7 @@ main {
 
 .c-construct img {
   width: 531px;
+  transform: translateX(-25px);
 }
 
 .c-construct__des {
