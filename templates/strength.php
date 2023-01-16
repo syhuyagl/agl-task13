@@ -11,5 +11,10 @@ get_header();
                 6つの強み
             </h1>
         </div>
+        <div class="c-construct">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/construct.png" alt="所員紹介" class="Basic Wordpress">
+            <p class="c-construct__des">このサイトは工事中です。 <br> 大変お手数ですが、アドレス（URL）をご確認の上再度お探しいただくか、 トップページからご利用ください。</p>
+        </div>
     </div>
 </main>
+<?php get_footer(); ?>

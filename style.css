@@ -29,9 +29,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 main {
   margin-bottom: 100px;
 }
+
 .bx-wrapper {
   border: 0 !important;
   -webkit-box-shadow: none !important;
@@ -286,6 +288,7 @@ main {
   margin-top: 70px;
   text-align: center;
 }
+
 .c-pnav a {
   display: inline-block;
   line-height: 30px;
@@ -573,14 +576,16 @@ main {
   text-align: left;
   padding-top: 30px;
 }
+
 .c-topicnav {
   margin-top: 70px;
   text-align: center;
 }
-.c-topicnav > *{
+
+.c-topicnav>* {
   margin-left: 5px;
-  
 }
+
 .c-topicnav a {
   display: inline-block;
   line-height: 30px;
@@ -609,4 +614,19 @@ main {
   width: 30px;
   text-align: center;
   color: #fff;
+}
+
+.c-construct {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.c-construct img {
+  width: 531px;
+}
+
+.c-construct__des {
+  max-width: 514px;
+  margin: 50px auto 0;
 }

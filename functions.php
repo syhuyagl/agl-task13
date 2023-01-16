@@ -115,6 +115,19 @@ if (function_exists('acf_add_options_page')) {
         )
     );
 }
+add_theme_support( 'title-tag' );
+
+add_filter( 'document_title_parts', 'orweb_custom_title');
+function orweb_custom_title( $title ) {
+if ( ! is_singular() ) return $title;
+$custom_title = trim(get_field('title', get_the_id()));
+if( ! empty( $custom_title ) ){
+	$custom_title = esc_html( $custom_title );
+	$title['title'] = $custom_title;
+    $title['site'] = '';
+	}
+return $title;
+}
 function custom_pagination($pages = '', $range = 2, $topics)
 {
     $showitems = ($range * 2) + 1;
