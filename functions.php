@@ -143,7 +143,7 @@ function custom_pagination($pages = '', $range = 2, $topics)
     }
 
     if (1 != $pages) {
-        if ($paged > 1 && $showitems < $pages)
+        if ($paged > 1)
             echo "<a class='prev' href='" . get_pagenum_link($paged - 1) . "'></a>";
 
         for ($i = 1; $i <= $pages; $i++) {
@@ -152,7 +152,7 @@ function custom_pagination($pages = '', $range = 2, $topics)
             }
         }
 
-        if ($paged < $pages && $showitems < $pages)
+        if ($paged < $pages)
             echo "<a class='next' href='"  . get_pagenum_link($paged + 1) . "'></a>";
     }
 }

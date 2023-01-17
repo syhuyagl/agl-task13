@@ -357,7 +357,10 @@ main {
   background-color: #90c132;
   color: #fff;
 }
-
+.current-menu-item a{
+  background-color: #90c132;
+  color: #fff;
+}
 .c-gnav li:before {
   position: absolute;
   left: 0;

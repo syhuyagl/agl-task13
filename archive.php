@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main class="p-topics">
     <div class="c-title c-title--page">
-        <h1>特集記事</h1>
+        <h1><?php single_cat_title('' , true ) ?></h1>
     </div>
     <div class="l-container">
         <ul class="c-listpost">

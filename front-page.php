@@ -18,11 +18,11 @@
 <main>
 	<div class="l-container">
 		<div class="c-grouplink">
-			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/img_01_no.png" alt=""
+			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/img_01_no.png" alt="Basic Wordpress"
 					class="js-imglink"></a>
-			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/img_02_no.png" alt=""
+			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/img_02_no.png" alt="Basic Wordpress"
 					class="js-imglink"></a>
-			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/img_03_no.png" alt=""
+			<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/img_03_no.png" alt="Basic Wordpress"
 					class="js-imglink"></a>
 		</div>
 
@@ -54,7 +54,7 @@
 			</ul>
 
 			<div class="l-btn">
-				<a href="<?php echo get_site_url();?>/topics" class="c-btn c-btn--small">一覧を見る</a>
+				<a href="<?php echo get_site_url(); ?>/topics" class="c-btn c-btn--small">一覧を見る</a>
 			</div>
 		</div>
 
@@ -81,12 +81,18 @@
 						</p>
 						<br />
 						<p>
-							<span class="tel">tel : <?php echo $item['tel']; ?></span>
-							<span class="fax">fax : <?php echo $item['fax']; ?></span>
+							<?php if ($item['tel']): ?>
+								<span class="tel">tel : <?php echo $item['tel']; ?></span>
+							<?php endif; ?>
+							<?php if ($item['fax']): ?>
+								<span class="fax">fax : <?php echo $item['fax']; ?></span>
+							<?php endif; ?>
 							<br />
-							<span class="email">
-								<?php echo $item['email']; ?>
-							</span>
+							<?php if ($item['email']): ?>
+								<span class="email">
+									mail : <?php echo $item['email']; ?>
+								</span>
+							<?php endif; ?>
 						</p>
 					</div>
 					<div class="c-access__img">
