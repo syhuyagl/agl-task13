@@ -351,7 +351,10 @@ main {
   position: relative;
   padding: 0 5px;
 }
-
+.c-select{
+  margin: 0 auto;
+  width: fit-content;
+}
 .c-gnav li:hover a,
 .c-gnav li.active a {
   background-color: #90c132;

@@ -28,7 +28,6 @@ if (!function_exists('basic_theme_setup')) {
             )
         );
         register_nav_menu('primary-menu', __('Primary Menu', 'basic'));
-
     }
     add_action('init', 'basic_theme_setup');
 }
@@ -70,21 +69,20 @@ function add_css()
     $data = str_replace('{theme_url}', get_template_directory_uri(), $style);
 
     wp_add_inline_style('style', $data);
-
 }
 add_action('wp_enqueue_scripts', 'add_css');
 function add_script()
 {
     wp_register_script('main', get_template_directory_uri() . '/js/common.js', array('jquery'), 1.1, true);
+    wp_register_script('select', get_template_directory_uri() . '/js/select.js', array('jquery'), 1.1, true);
     wp_enqueue_script('main');
+    wp_enqueue_script('select');
 }
 add_action('wp_enqueue_scripts', 'add_script');
 function add_my_style()
 {
 
     wp_enqueue_script('my_style', get_template_directory_uri() . '/mystyle.css');
-
-
 }
 if (function_exists('acf_add_options_page')) {
 
@@ -115,18 +113,20 @@ if (function_exists('acf_add_options_page')) {
         )
     );
 }
-add_theme_support( 'title-tag' );
+add_theme_support('title-tag');
 
-add_filter( 'document_title_parts', 'orweb_custom_title');
-function orweb_custom_title( $title ) {
-if ( ! is_singular() ) return $title;
-$custom_title = trim(get_field('title', get_the_id()));
-if( ! empty( $custom_title ) ){
-	$custom_title = esc_html( $custom_title );
-	$title['title'] = $custom_title;
-    $title['site'] = '';
-	}
-return $title;
+add_filter('document_title_parts', 'orweb_custom_title');
+function orweb_custom_title($title)
+{
+    if (!is_singular())
+        return $title;
+    $custom_title = trim(get_field('title', get_the_id()));
+    if (!empty($custom_title)) {
+        $custom_title = esc_html($custom_title);
+        $title['title'] = $custom_title;
+        $title['site'] = '';
+    }
+    return $title;
 }
 function custom_pagination($pages = '', $range = 2, $topics)
 {
@@ -153,7 +153,26 @@ function custom_pagination($pages = '', $range = 2, $topics)
         }
 
         if ($paged < $pages)
-            echo "<a class='next' href='"  . get_pagenum_link($paged + 1) . "'></a>";
+            echo "<a class='next' href='" . get_pagenum_link($paged + 1) . "'></a>";
     }
 }
-?>
+add_action('wp_ajax_call_post', 'call_post_init');
+add_action('wp_ajax_nopriv_call_post', 'call_post_init');
+function call_post_init()
+{
+    $choices = $_POST['choices'];
+    $args = array('post_type' => 'post', 'category__in' => (int)$choices['term_id'], 'posts_per_page' => '5');
+    // var_dump($args);
+    // exit();
+    $query = new WP_Query($args);
+    if ($query->have_posts()) :
+        while ($query->have_posts()) :
+            $query->the_post();
+            get_template_part('template-parts/content', 'filter', $args);
+        endwhile;
+        wp_reset_query();
+    else :
+        wp_send_json($query->posts);
+    endif;
+    die();
+}
