@@ -162,8 +162,6 @@ function call_post_init()
 {
     $choices = $_POST['choices'];
     $args = array('post_type' => 'post', 'category__in' => (int)$choices['term_id'], 'posts_per_page' => '5');
-    // var_dump($args);
-    // exit();
     $query = new WP_Query($args);
     if ($query->have_posts()) :
         while ($query->have_posts()) :

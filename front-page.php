@@ -102,7 +102,7 @@
 						</p>
 					</div>
 					<div class="c-access__img">
-						<img src="<?php echo esc_url($item['image_map']['url']); ?>" alt="<?php echo esc_url($item['image_map']['alt']); ?>" />
+						<img src="<?php echo esc_url($item['image_map']['url']); ?>" alt="<?php echo $item['image_map']['alt'] ?>" />
 					</div>
 				</div>
 			<?php endforeach; ?>

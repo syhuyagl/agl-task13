@@ -351,19 +351,20 @@ main {
   position: relative;
   padding: 0 5px;
 }
-.c-select{
-  margin: 0 auto;
-  width: fit-content;
-}
+
+
+
 .c-gnav li:hover a,
 .c-gnav li.active a {
   background-color: #90c132;
   color: #fff;
 }
-.current-menu-item a{
+
+.current-menu-item a {
   background-color: #90c132;
   color: #fff;
 }
+
 .c-gnav li:before {
   position: absolute;
   left: 0;
@@ -636,4 +637,32 @@ main {
 .c-construct__des {
   max-width: 514px;
   margin: 50px auto 0;
+}
+
+#select {
+  text-align: center;
+  appearance: none;
+  width: 200px;
+  padding: 5px 0;
+  color: #90c132;
+  border: 2px solid #90c132;
+  border-radius: 64px;
+}
+
+.c-select {
+  margin: 40px auto 0;
+  width: fit-content;
+  position: relative;
+}
+
+.c-select::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-color: #90c132 transparent transparent transparent;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-26%);
 }
